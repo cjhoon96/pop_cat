@@ -7,6 +7,7 @@ screen = pg.display.set_mode((680,665))
 
 pop_open = pg.image.load("./pop_img/popcat_open.png")
 pop_close = pg.image.load("./pop_img/popcat_close.png")
+open_sound = pg.mixer.Sound("./pop_sound/pop_open")
 
 scr = pop_open
 
@@ -31,6 +32,7 @@ while not done:
         screen.fill((0,0,0))
         screen.blit(scr, (0,0))
         pg.display.flip()
+        pygame.mixer.Sound.play(open_sound)
     elif not click:
         scr = pop_close
         screen.fill((0,0,0))
